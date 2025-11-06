@@ -4,19 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pedal Your Truth</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #e5e2dd; /* matches the tone of the logo background */
+      background: #e5e2dd;
       background-image: radial-gradient(circle, #e5e2dd 0%, #d4d0ca 100%);
       font-family: Arial, sans-serif;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     .logo-container {
       text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     img {
       width: 300px;
@@ -31,12 +44,41 @@
       color: #222;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 2s ease 1s forwards;
+    }
+    .social-links a {
+      color: #222;
+      font-size: 1.8em;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #1da1f2;
+      transform: scale(1.1);
+    }
+    .social-links a.tiktok:hover {
+      color: #000;
+    }
+    .social-links a.etsy:hover {
+      color: #d5641c;
+    }
   </style>
 </head>
 <body>
   <div class="logo-container">
     <img src="/images/IMG_2484.png" alt="Pedal Your Truth Logo" style="box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5)">
     <h1>Who are you?</h1>
+  </div>
+
+  <div class="social-links">
+    <a href="https://x.com" target="_blank" class="x" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://www.tiktok.com" target="_blank" class="tiktok" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="https://www.etsy.com" target="_blank" class="etsy" rel="noopener noreferrer"><i class="fa-brands fa-etsy"></i></a>
   </div>
 </body>
 </html>
