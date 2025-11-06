@@ -6,79 +6,94 @@
   <title>Pedal Your Truth</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       height: 100vh;
+      width: 100vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #e5e2dd;
-      background-image: radial-gradient(circle, #e5e2dd 0%, #d4d0ca 100%);
       font-family: Arial, sans-serif;
-      opacity: 0;
-      animation: fadeIn 1.5s ease forwards;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6);
     }
     .logo-container {
-      text-align: center;
-      flex: 1;
+      z-index: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      animation: fadeIn 2s ease forwards;
     }
     img {
       width: 300px;
       max-width: 80vw;
       height: auto;
-      filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+      filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
     }
     h1 {
       margin-top: 20px;
       font-size: 2em;
       letter-spacing: 2px;
-      color: #222;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
     .social-links {
       display: flex;
       justify-content: center;
       gap: 30px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       opacity: 0;
-      animation: fadeIn 2s ease 1s forwards;
+      animation: fadeIn 2s ease 1.2s forwards;
+      z-index: 1;
     }
     .social-links a {
-      color: #222;
+      color: #fff;
       font-size: 1.8em;
       transition: color 0.3s ease, transform 0.3s ease;
     }
     .social-links a:hover {
-      color: #1da1f2;
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
-    .social-links a.tiktok:hover {
-      color: #000;
-    }
-    .social-links a.etsy:hover {
-      color: #d5641c;
+    .social-links a.x:hover { color: #1da1f2; }
+    .social-links a.tiktok:hover { color: #000; }
+    .social-links a.etsy:hover { color: #d5641c; }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/images/pyt_mtb_background.mp4" type="video/mp4">
+  </video>
+
   <div class="logo-container">
-    <img src="/images/IMG_2484.png" alt="Pedal Your Truth Logo" style="box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5)">
+    <img src="/images/IMG_2484.png" alt="Pedal Your Truth Logo">
     <h1>Who are you?</h1>
   </div>
 
   <div class="social-links">
-    <a href="https://x.com/pedalyourtruth" target="_blank" class="x" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
-    <a href="https://www.tiktok.com/@pedalyourtruth" target="_blank" class="tiktok" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="https://x.com" target="_blank" class="x" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://www.tiktok.com" target="_blank" class="tiktok" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
     <a href="https://www.etsy.com" target="_blank" class="etsy" rel="noopener noreferrer"><i class="fa-brands fa-etsy"></i></a>
   </div>
 </body>
 </html>
+
